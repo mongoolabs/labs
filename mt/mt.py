@@ -51,6 +51,12 @@ class Trans(object):
     def em(self, n=1):
         """
         EM 算法
+        
+        E步:
+          积累不同行, 对同一词,同一翻译的条件概率.
+          并计算对于这个词在整篇中的总条件概率.
+        M步:
+          调整概率, 计算每一个词的条件概率,词的积累条件概率/词总条件概率.
         """
         for i in xrange(n):
             count = defaultdict(float)
